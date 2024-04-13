@@ -43,6 +43,7 @@ export class ListFriendPageComponent implements OnInit, OnDestroy {
   }
 
   private _updateFriendListWith(friend: IFriend): void {
+    console.log('getting update', friend);
     const updateFriends = this.friends().map((f) => {
       if (f.id === friend.id) {
         return friend;

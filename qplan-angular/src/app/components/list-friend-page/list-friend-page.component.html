@@ -9,13 +9,25 @@
   </ng-container>
 
   <ng-container matColumnDef="name">
-    <th *matHeaderCellDef mat-header-cell> Nombre</th>
-    <td *matCellDef="let element" mat-cell> {{ element.name }}</td>
+    <th *matHeaderCellDef mat-header-cell> Name</th>
+    <td *matCellDef="let element" mat-cell> 
+      {{ element.name }}
+      @if (element.previus?.name) {
+        <small>Previus:{{ element.previus.name }}</small>
+      }
+    </td>
   </ng-container>
 
   <ng-container matColumnDef="gender">
-    <th *matHeaderCellDef mat-header-cell> Genero</th>
-    <td *matCellDef="let element" mat-cell> {{ element.gender }}</td>
+    <th *matHeaderCellDef mat-header-cell> Gender</th>
+    <td *matCellDef="let element" mat-cell> 
+      {{ element.gender === 'F' ? 'Female' : 'Male' }}
+      @if (element.previus?.gender) {
+        <div>
+          <small>Previus:{{ element.previus.gender  === 'F' ? 'Female' : 'Male' }}</small>
+        </div>
+      }
+    </td>
   </ng-container>
 
   <ng-container matColumnDef="config">

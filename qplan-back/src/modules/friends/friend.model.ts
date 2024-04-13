@@ -15,7 +15,7 @@ class Friend extends Model {
 
     @AfterUpdate
     static updated(friend: Friend) {
-        WebsocketIo.getInstance().emit('updated-friend', JSON.stringify(friend));
+        WebsocketIo.getInstance().emit('updated-friend', JSON.stringify({...friend.dataValues, previus: friend.previous()}));
     }
 }
 

@@ -1,9 +1,11 @@
+
+# QPlan.cl Backend
+
 <p align="center">
-    QPlan.cl
+<img src="https://skillicons.dev/icons?i=nodejs,expressjs,postgres" height="35" style="margin-right: 10px" />
 </p>
 
 ---
-<img src="https://skillicons.dev/icons?i=nodejs" height="35" style="margin-right: 10px" />
 
 # Instrucciones
 

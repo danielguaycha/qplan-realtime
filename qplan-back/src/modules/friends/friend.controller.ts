@@ -8,8 +8,9 @@ class FriendController extends BaseController {
     }
 
     async findAll(res: Response) {
-        const data = await Friend.findAll();
+        const data = await Friend.findAll({ order: [['id', 'ASC']]});
         return this.data(res, data);
+    
     }
 
     async findOne(req: Request, res: Response) {
