@@ -1,0 +1,36 @@
+<h1>Update Friends</h1>
+
+<mat-card>
+
+  <mat-card-header>
+    <button aria-label="Back to home" mat-button routerLink="/friends">
+      <mat-icon>home</mat-icon>
+      Back to Home
+    </button>
+  </mat-card-header>
+
+  <br>
+
+  <mat-card-content>
+    <form (ngSubmit)="updateFriend()" [formGroup]="formFriend">
+      <mat-form-field class="example-full-width">
+        <mat-label>Name:</mat-label>
+        <input formControlName="name" matInput placeholder="Ingrese un nombre">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Gender</mat-label>
+        <mat-select formControlName="gender">
+          <mat-option value="F">Female</mat-option>
+          <mat-option value="M">Male</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button [disabled]="updateLoader() || formFriend.invalid" color="primary" mat-flat-button>Actualizar</button>
+    </form>
+
+  </mat-card-content>
+
+
+</mat-card>
+

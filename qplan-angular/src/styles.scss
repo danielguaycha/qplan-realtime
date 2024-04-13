@@ -1,0 +1,43 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container {
+  padding: 1rem;
+  max-width: 550px;
+  text-align: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.rows {
+  transition: 1s all ease;
+
+  &.remarked {
+    background: #d5ffd9 !important;
+    font-weight: 600;
+    color: #004100;
+  }
+}
+
+small {
+  color: #b4b4b4;
+}

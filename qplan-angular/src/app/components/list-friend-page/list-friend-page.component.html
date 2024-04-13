@@ -1,0 +1,39 @@
+<div class="d-flex justify-between">
+  <h1>Friends List</h1>
+</div>
+<table [dataSource]="friends()" class="mat-elevation-z1" mat-table>
+
+  <ng-container matColumnDef="id">
+    <th *matHeaderCellDef mat-header-cell> ID</th>
+    <td *matCellDef="let element" mat-cell> {{ element.id }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th *matHeaderCellDef mat-header-cell> Nombre</th>
+    <td *matCellDef="let element" mat-cell> {{ element.name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="gender">
+    <th *matHeaderCellDef mat-header-cell> Genero</th>
+    <td *matCellDef="let element" mat-cell> {{ element.gender }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="config">
+    <th *matHeaderCellDef mat-header-cell> Config</th>
+    <td *matCellDef="let element" mat-cell>
+      <button [routerLink]="['/friends/update/', element.id]" aria-label="Example icon button with a home icon"
+              color="primary"
+              mat-icon-button>
+        <mat-icon>edit</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr *matHeaderRowDef="['id', 'name', 'gender', 'config']" mat-header-row></tr>
+  <tr *matRowDef="let row; columns: ['id', 'name', 'gender', 'config'];" [id]="'friend_' + row.id" class="rows"
+      mat-row></tr>
+
+</table>
+
+<br>
+<small>Developed by DG</small>
